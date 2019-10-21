@@ -9,11 +9,10 @@ public class Main {
 	public final static char EMPTY_CELL = '-';
 	public static int width = 5;
 	public static int height = 5;
-	public static int aliveCellsCount = 15;
 	public static boolean isGameOver = false;
 
 	public static void main(String[] args) {
-		int[][] field = createField(width, height, aliveCellsCount);
+		int[][] field = createField(width, height);
 		printField(field, ALIVE_CELL, EMPTY_CELL);
 
 		while (!isGameOver) {
@@ -22,14 +21,13 @@ public class Main {
 		}
 	}
 
-	public static int[][] createField(int width, int height, int aliveCellsCount) {
+	public static int[][] createField(int width, int height) {
 		int[][] field = new int[width][height];
 
-		Random random = new Random();
-		for (int i = 0; i < aliveCellsCount; i++) {
-			int x = random.nextInt(width);
-			int y = random.nextInt(height);
-			field[x][y] = 1;
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
+				field[i][j] = Math.random() > 0.5 ? 1 : 0;
+			}
 		}
 
 		return field;
