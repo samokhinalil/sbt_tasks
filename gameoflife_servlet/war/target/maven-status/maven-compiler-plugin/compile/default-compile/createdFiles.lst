@@ -1,0 +1,7 @@
+ru\game\Game.class
+ru\sbt\sandbox\GameOfLifeServlet.class
+ru\game\GameHtmlViewer.class
+ru\sbt\sandbox\MavenServlet.class
+ru\sbt\sandbox\MavenFilter.class
+ru\game\Field.class
+ru\sbt\sandbox\Utf8Filter.class
